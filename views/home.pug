@@ -1,0 +1,31 @@
+extends  layout.pug
+
+block content
+    +Hero("Welcome! Ask me anything about cooking, recipes, or kitchen tips.")
+    //  chat section
+    section.container
+      div.chat
+        h3.title-color chat
+        div(class="chat-box" style="height: 500px; overflow-y: auto; border: 1px solid #ccc; padding: 10px;")
+            div.box-masseg
+                span.icon
+                    i(class="fa-solid fa-utensils")
+                div.textSender How can help you to day <br>
+                    span.sender AI
+
+        div.form-input
+            p.greenText Type youer massege
+            div
+               textarea(id="user-text"
+                 rows="4" cols="50"
+                 placeholder="Ask about recipes, tips, or ingredients…"
+                 )
+               span(id="send")
+                  i( class="fa-solid fa-arrow-up")
+
+        script.
+            document.addEventListener('DOMContentLoaded', function () {
+                autosize(document.getElementById('user-text'));
+            });
+    block script
+     script(src="/javascripts/script.js")

@@ -1,0 +1,53 @@
+html
+    head
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1, shrink-to-fit=no")
+        title #{title}
+        // Css file
+        link(rel="stylesheet", type="text/css", href="/stylesheets/materialize.min.css",media="screen,projection")
+        link(rel="stylesheet", type="text/css", href="/stylesheets/media.css")
+        link(rel="stylesheet", type="text/css", href="/stylesheets/style.css")
+        link(rel="stylesheet", type="text/css", href="/stylesheets/all.min.css")
+        //Import font (Inter)
+        link(rel="preconnect", href="https://fonts.googleapis.com")
+        link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+        link(
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+            rel="stylesheet"
+            )
+        ink(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/simplebar@latest/dist/simplebar.min.css")
+
+        // CDN
+        script(src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js")
+        script(src="https://cdn.jsdelivr.net/npm/autosize@5.0.1/dist/autosize.min.js")
+        script(src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js")
+        script(src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js")
+        script(src="/javascripts/materialize.min.js")
+        script(src="https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs" type="module")
+
+
+
+        body
+            include mixins.pug
+            // haeder Start
+            header
+                nav.white
+                   ul.black-text.iteamnav
+                      li.col.s2.logo   Cook Assisstat
+                      li.col.s2.center
+                          a.black-text(href="/") <i class="fa-solid fa-message"></i> Chat AI
+                      li.col.s2
+                           a.black-text(href="/voicechat/") <i class="fa-solid fa-microphone-lines"></i> Voice
+            block content
+
+            block sctipt
+
+
+
+
+
+
+
+
+
+

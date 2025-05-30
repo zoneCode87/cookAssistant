@@ -1,0 +1,23 @@
+extends  layout
+
+block content
+  +Hero("Voice chat can  ask any thing")
+  section.container
+      div.chat
+           h3.title-color Voice Chat
+           p.greenText Press to start chat
+           button(class="waves-effect waves-light btn  green darken-2" id="btn-conect") start
+      div.voicebox.scale-transition.scale-out#voiceBox
+        dotlottie-player(
+            id = "myLottie"
+            src="https://lottie.host/516d673f-ca1c-4c56-bed3-75d825ecfd12/gbRFj0SZrD.lottie"
+            background="transparent"
+            speed="2"
+            style="width: 300px; height: 300px;"
+            loop ='true'
+            autoplay
+        )
+
+  block script
+      script(src="/javascripts/voicechat.js")
+

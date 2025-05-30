@@ -1,0 +1,18 @@
+mixin Hero(text)
+    section.container
+        .content.row
+            h1.col.s12.title-color.title-bg-color.box-title Cooking Assistant
+
+    //section  img & text Box [hero]
+    section.container
+        .hero.row
+            img.col.s7(src="/images/heroIMG.avif")
+            div#box-text.col.s5.greenText.bg-linen
+
+        // نستخدم interpolation بشكل صحيح داخل السكريبت
+        script.
+            const typed = new Typed('#box-text', {
+                strings: ["!{text}"],
+                typeSpeed: 100,
+                loop: true
+            });
