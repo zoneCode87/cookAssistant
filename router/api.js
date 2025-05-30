@@ -1,13 +1,12 @@
 const  express = require('express');
 const Router = express.Router()
 const OpenAI  = require("openai");
-
 const dotenv = require('dotenv');
 dotenv.config();
-
+const fs = require('fs');
+const systeamRole = fs.readFileSync('./sysrole.txt','utf-8')
 const  AI = new OpenAI();
 const {pipeline} = require("node:stream/promises")
-const systeamRole = require("../role.json");
 
 Router.use(express.json());
 
@@ -39,7 +38,7 @@ Router.post('/masseg', async (req, res) => {
 });
 
 async function SendToAI(message) {
-    let  x = [{role:"system",content:systeamRole.role}]
+    let  x = [{role:"system",content:systeamRole}]
     for(let i of message){
         x.push(i)
     }
@@ -70,7 +69,7 @@ Router.get("/session", async (req, res) => {
         body: JSON.stringify({
             model: "gpt-4o-mini-realtime-preview",
             voice: "verse",
-            instructions: systeamRole.role
+            instructions: systeamRole
         }),
     });
     const data = await r.json();
